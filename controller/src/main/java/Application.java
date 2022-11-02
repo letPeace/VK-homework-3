@@ -1,6 +1,5 @@
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import entities.Book;
 import entities.Library;
 import factories.LibraryFactory;
 import modules.TestModule;

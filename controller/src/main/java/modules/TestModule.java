@@ -1,10 +1,8 @@
 package modules;
 
 import com.google.inject.AbstractModule;
-import entities.Library;
 import factories.BooksFactory;
 import lombok.AllArgsConstructor;
-import lombok.Value;
 
 @AllArgsConstructor
 public class TestModule extends AbstractModule {
