@@ -17,16 +17,16 @@ public class BooksFactory {
     @NotNull
     private static final Type listBooksType = new TypeToken<ArrayList<Book>>(){}.getType();
     @NotNull
-    private final String fileName;
+    private final String path;
 
-    public BooksFactory(@NotNull String fileName) {
-        this.fileName = fileName;
+    public BooksFactory(@NotNull String path) {
+        this.path = path;
     }
 
     @NotNull
     public List<Book> get(){
         try {
-            return new Gson().fromJson(new BufferedReader(new FileReader(fileName)), listBooksType);
+            return new Gson().fromJson(new BufferedReader(new FileReader(path)), listBooksType);
         } catch (FileNotFoundException e) {
             throw new IllegalStateException(e);
         }

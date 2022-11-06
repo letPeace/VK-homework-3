@@ -2,20 +2,22 @@ package modules;
 
 import com.google.inject.AbstractModule;
 import factories.BooksFactory;
-import lombok.AllArgsConstructor;
+import factories.LibraryFactory;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+@NoArgsConstructor
 public class TestModule extends AbstractModule {
 
-    private final String fileName;
+    private static String path;
 
-    public TestModule(){
-        this("");
+    public static void setPath(String path){
+        TestModule.path = path;
     }
 
     @Override
     protected void configure() {
-        bind(BooksFactory.class).toInstance(new BooksFactory(fileName));
+        bind(BooksFactory.class).toInstance(new BooksFactory(path));
+        bind(LibraryFactory.class);
     }
 
 }
